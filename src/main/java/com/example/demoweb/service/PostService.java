@@ -8,13 +8,11 @@ import java.util.ArrayList;
 
 @Service
 public class PostService {
-
     public ArrayList<Post> listAllPosts(){
         ArrayList<Post> posts = new ArrayList<>();
-        posts.add(new Post("Lalala", 999));
-        posts.add(new Post("Sanya", 999));
-        posts.add(new Post("Random text", 999));
-
+        posts.add(new Post("OOO"));
+        posts.add(new Post("Moya"));
+        posts.add(new Post("Oborona!"));
         return posts;
     }
 }
