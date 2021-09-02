@@ -20,7 +20,7 @@
                 <p class="description-text" th:text="${post.text}">Text</p>
             </div>
             <div class="col-md-1">
-                <button class="btn btn-sm btn-secondary like" th:text="${post.likes + ' ❤'}">0 ❤</button>
+                <button th:attr="data-post-id=${post.id}" class="btn btn-sm btn-secondary like" th:text="${post.getLikes() + ' ❤'}">0 ❤</button>
             </div>
             <div class="col-md-12">
                 <hr/>
@@ -29,5 +29,8 @@
     </div>
 </div>
 
+
+<script src="/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </body>
 </html>
