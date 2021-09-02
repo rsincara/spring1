@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TODO</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<ul>
+    <li th:each="p : ${posts}">
+        <p th:text="${p.text}">text</p>
+        <p>(лайков <span th:text="${p.likes}">999</span>)</p>
+    </li>
+</ul>
+
+
+</body>
+</html>
