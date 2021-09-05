@@ -14,6 +14,10 @@ public class Post {
         this.creationDate = creationDate;
     }
 
+    public Post(){
+        text = "";
+    }
+
     public Long id (){
         return this.id;
     }
