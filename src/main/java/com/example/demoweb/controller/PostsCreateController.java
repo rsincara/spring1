@@ -25,5 +25,3 @@ public class PostsCreateController {
         return "redirect:/";
     }
 }
-
-

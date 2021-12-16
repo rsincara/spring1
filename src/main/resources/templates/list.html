@@ -3,8 +3,8 @@
 <head>
     <title>TODO</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 </head>
 <body>
 
@@ -20,15 +20,16 @@
                 <p class="description-text" th:text="${post.text}">Text</p>
             </div>
             <div class="col-md-1">
-                <button th:attr="data-post-id=${post.id}" class="btn btn-sm btn-secondary like" th:text="${post.getLikes() + ' ❤'}">0 ❤</button>
+                <a th:href="${'/remove/' + post.id}" style="color: #ffffff" class="btn btn-danger">Remove</a>
+                <button style="width:82px" th:attr="data-post-id=${post.id}" class="btn btn-sm btn-secondary like" th:text="${post.getLikes() + ' ❤'}">0 ❤</button>
             </div>
             <div class="col-md-12">
                 <hr/>
             </div>
         </div>
     </div>
+    <a href="/new" class="btn btn-primary">Add post</a>
 </div>
-
 
 <script src="/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

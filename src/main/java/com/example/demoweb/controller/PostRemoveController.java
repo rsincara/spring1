@@ -8,22 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
-public class PostsViewController {
+public class PostRemoveController {
     @Autowired
     PostService postsService;
 
-    @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String list(Model model) {
-        model.addAttribute("appName", "Мое супер приложение");
-        model.addAttribute("posts",postsService.listAllPosts());
-        return "list";
-    }
-
     @ResponseBody
-    @RequestMapping(path = "/post/{id}", method = RequestMethod.GET)
-    public String single(@PathVariable("id") Long testid) {
-        return "Здесь будет страница поста №" + testid;
+    @RequestMapping(path = "/remove/{id}", method = RequestMethod.GET)
+    public RedirectView doRemove(@PathVariable("id") Long id) {
+        postsService.remove(id);
+        RedirectView redirectView = new RedirectView();
+        redirectView.setUrl("http://localhost:8000");
+        return redirectView;
     }
 }
